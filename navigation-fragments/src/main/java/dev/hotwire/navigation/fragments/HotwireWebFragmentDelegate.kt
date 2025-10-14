@@ -37,7 +37,7 @@ internal class HotwireWebFragmentDelegate(
     private val callback: HotwireWebFragmentCallback
 ) : SessionCallback, VisitDestination {
 
-    private val location = navDestination.location
+    private val location get() = navDestination.location
     private val visitOptions = currentVisitOptions()
     private val identifier = generateIdentifier()
     private var isInitialVisit = true
