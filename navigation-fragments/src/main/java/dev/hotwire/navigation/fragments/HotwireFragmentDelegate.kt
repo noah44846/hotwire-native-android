@@ -71,7 +71,7 @@ class HotwireFragmentDelegate(private val navDestination: HotwireDestination) {
      */
     fun onStartAfterModalResult(result: SessionModalResult) {
         logEvent("fragment.onStartAfterModalResult", "location" to result.location, "options" to result.options)
-        if (navigator.shouldRouteToModalResult(result)) {
+        if (navigator.willRouteToNewDestinationWithModalResult(result)) {
             navigator.route(result.location, result.options, result.bundle)
         }
     }
